@@ -1,0 +1,60 @@
+<!-- Getting From KeyBoard-->
+
+<html>
+
+
+<script>
+let pos = 0;
+let p = 0;
+function left()
+{
+pos=pos-5;
+document.getElementById("b").style.left = pos+"px";
+}
+function right()
+{
+pos = pos+5;
+document.getElementById("b").style.left = pos+"px";
+}
+function up()
+{
+p = p-5;
+document.getElementById("b").style.top = p+"px";
+}
+function down()
+{
+p = p+5;
+document.getElementById("b").style.top = p+"px";
+}
+
+
+// THIS Three Lines of Code is Very Important For Getting Input from KeyBoard not for ARROWS KEY
+
+
+document.onkeypress = function(evt) {
+    evt = evt || window.event;
+    var charCode = evt.keyCode || evt.which;
+    var charStr = String.fromCharCode(charCode);
+    //alert(charStr);
+	if(charStr == 'f' || charStr == 'F')
+		right();
+	else if(charStr == 'b' || charStr == 'B')
+		left();
+	else if(charStr == 'u' || charStr == 'U')
+		up();
+	else if(charStr == 'd' || charStr == 'D')
+		down();
+}
+
+</script>
+
+<body>
+<p id="b" style="width:50px;height:50px;position:relative;background-color:blue">&nbsp;</p>
+<input type="button" onclick="left()" value="left">
+<input type="button" onclick="right()" value="right">
+<input type="button" onclick="up()" value="up">
+<input type="button" onclick="down()" value="down">
+
+</body>
+
+</html>

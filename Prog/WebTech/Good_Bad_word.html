@@ -1,0 +1,46 @@
+<!-- Check Good and Bad Word that present in array -->
+
+<html>
+<body>
+Enter A Good/Bad Word : 
+<input type="text" id="GB"><br>
+<input type="button" onclick="score()" value ="Click"><br>
+Your Score : <label id = "sc" value="0"></label><br>
+Chance : <label id="ch" value="0"></label>
+</body>
+<script>
+var good = ["Well","Excelent","Best","Good"];
+var bad = ["No","Worst","Bad","Oops"];
+var scr = 0;
+var chance = 3;
+function score()
+{
+	if(chance>0)
+	{
+	for(var i=0;i<4;i++)
+	{
+ if(document.getElementById("GB").value == good[i])
+	{
+	scr ++;
+	chance++;
+	}
+ else if(document.getElementById("GB").value == bad[i])
+	{
+	chance++;
+	scr --;
+	}
+	}
+	chance--;
+	}
+	else
+		document.write("Good!! Better Luck Next Time");
+	document.getElementById("sc").innerHTML = scr;
+	document.getElementById("ch").innerHTML = chance;
+	//document.write("<br>  Your Score : "+ scr+"<br> Chance : "+chance);
+
+}
+document.getElementById("sc").innerHTML = scr;
+document.getElementById("ch").innerHTML = chance;
+//document.write("<br>  Your Score : "+ scr+"<br> Chance : "+chance);
+</script>
+</body>

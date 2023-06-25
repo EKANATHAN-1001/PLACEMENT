@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>VALIDATION</title>
+</head>
+<body>
+<p id = "R1" style="font-size: 24px;"></p>
+
+<p id = "R2" style="font-size: 24px;"></p>
+</body>
+<script>
+	var phNo="",Doll="";
+	var reg1 = "0123456789";
+	function ph()
+	{
+		var flag=0,c=0;
+		if(phNo.length == 9)
+		{
+		for(var i=0;i<phNo.length;i++)
+		{
+			for(var j=0;j<reg1.length;j++)
+			{
+				if(reg1[j]==phNo[i])
+					c++;
+			}
+		}
+		if(c==9)
+			flag=1;
+		}
+		if(flag == 1)
+		{
+			if(phNo[0]=='9' || phNo[0]=='8')
+			{
+				document.getElementById('R1').innerHTML = phNo+" is Valid Mobile Number";
+			}
+			else
+			{
+				document.getElementById('R1').innerHTML = phNo+" is InValid Mobile Number (Start with 8/9)";	
+			}
+		}
+		else
+		{
+			document.getElementById('R1').innerHTML = phNo+" is InValid Mobile Number (Length < 9 || Length > 9  || Contains Elements)";
+		}
+		
+		
+	}
+	function doll()
+	{
+		var c=0;
+		if(Doll[0]=='$')
+		{
+			for(var i=0;i<Doll.length;i++)
+			{	
+				if(Doll[i]=='.')
+					c++;
+			}
+			if(c==1)
+				document.getElementById('R2').innerHTML = Doll + " is a Valid Dollar ";
+			else
+				document.getElementById('R2').innerHTML = Doll + " is a InValid Dollar";
+		}
+		else
+				document.getElementById('R2').innerHTML = Doll + " is a InValid Dollar";
+	}
+	function get_ph_doll() {
+		phNo = prompt("Enter The Mobile Number");
+		Doll = prompt("Enter the US Dollar");
+		ph();
+		doll();
+	}
+	get_ph_doll();
+</script>
+</html>

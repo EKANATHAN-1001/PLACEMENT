@@ -1,0 +1,25 @@
+<html>
+<body style="background-color: pink;">
+	<label style="left: 0px;top: 0px; position: relative;color: royalblue;" id="l1" value="HELLO HUMANS!!">HELLO HUMANS!!</label>
+</body>
+<script>
+function a()
+{
+	// 250 represent the max Size;
+	document.getElementById("l1").style.fontSize = Math.floor(Math.random()*150+20)+"px";
+}
+var msg = ["Hai","How are you ?","Happy BirthDay","Well Done!","Bye","Fine","Good Morning","Hi"];
+var font = ["Arial","Verdana","Tahoma","Trebuchet MS","Times New Roman","Georgia","Garamond","Courier New","Brush Script MT"];
+function b()
+{
+	var i = Math.floor(Math.random()*font.length);
+	document.getElementById("l1").style.fontFamily = font[i];
+	i = Math.floor(Math.random()*msg.length);
+	document.getElementById('l1').innerHTML = msg[i];
+	document.getElementById('l1').style.left = Math.floor(Math.random()*500);
+	document.getElementById('l1').style.top = Math.floor(Math.random()*500);
+}
+setInterval(a,2000);
+setInterval(b,2000);
+</script>
+</html>

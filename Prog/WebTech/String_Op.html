@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>String Operation</title>
+</head>
+<script>
+function d()
+{
+var a = prompt("Enter Your Name");
+document.write("Name: "+a);
+
+
+var ch = prompt(" 0-Length 1 - Initial 2-Slicing 3- Upper 4- Swap 5-Exit");
+
+if(ch == 0)
+{
+	document.write("<br>No of Character : "+a.length+"<br>");
+}
+else if(ch == 1)
+{
+
+document.write("<br>Initial String: ");
+for(var i=0;i<a.length;i++)
+{
+	if(a[i].toUpperCase() == a[i])
+		document.write(a[i]);
+}
+document.write("<br>");
+}
+
+if(ch == 2)
+{
+var n = prompt("Enter Start of Slice");
+var l = prompt("Enter End of Slice");
+document.write("<br>Sliced String: ");
+for(var i=n;i<l;i++)
+	document.write(a[i]);
+document.write("<br>");
+}
+if(ch ==3)
+{
+document.write("<br>UpperCase String: ");
+for(var i=0;i<a.length;i++)
+{
+	document.write(a[i].toUpperCase());
+}
+document.write("<br>");
+}
+if(ch == 4)
+{
+
+document.write("<br>SwapCase String: ");
+for(var i=0;i<a.length;i++)
+{
+	if(a[i].toUpperCase() == a[i])
+	document.write(a[i].toLowerCase());
+	if(a[i].toLowerCase() == a[i])
+	document.write(a[i].toUpperCase());
+}
+}
+if(ch == 5)
+{
+	return;
+}
+
+}
+d();
+</script>
+
+</html>
